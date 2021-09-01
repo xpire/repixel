@@ -1,6 +1,10 @@
 # repixel
 ## Convert a scaled jpeg of pixel art into pixel perfect bitmap
 
+Source image             |  Image with Grid           | Result
+:-------------------------:|:-------------------------:|:----:
+![](./static/source.png)  |  ![](./static/grid.png)| ![](./static/result.png)
+
 # what is repixel?
 
 Given an image of scaled up pixel art which has been affected by:
@@ -21,12 +25,6 @@ Given an image of scaled up pixel art which has been affected by:
     4. the grid that results in the lowest MSE is returned
     5. the grid is extrapolated to the edges of the image
 3. for each square in the grid, the colour of the grid is estimated using the median of all colour tuples in that grid
-
-Here is a visualisation of the process taken:
-
-Source image             |  Image with Grid           | Result
-:-------------------------:|:-------------------------:|:----:
-![](./static/source.png)  |  ![](./static/grid.png)| ![](./static/result.png)
 
 # Usage
 
