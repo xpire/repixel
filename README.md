@@ -45,3 +45,21 @@ I have completed the first 2 main goals. However, the colouring of the pixels ha
     - [x] use median of source pixels in grid cell
     - [ ] use clustering to group similar colours together for a more consistent view
     - [ ] use location based clustering when colouring pixels to ensure local colour consistency
+
+# Useful Resources
+
+- [numpy.diff](https://numpy.org/doc/stable/reference/generated/numpy.diff.html)
+- [scipy.signal.find_peaks](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks.html)
+- [stackoverflow: Best match between two sets of points](https://stackoverflow.com/questions/52500239/best-match-between-two-sets-of-points)
+- [scipy.optimize.linear_sum_assignment](https://docs.scipy.org/doc/scipy-0.18.1/reference/generated/scipy.optimize.linear_sum_assignment.html)
+- [numpy.median](https://numpy.org/doc/stable/reference/generated/numpy.median.html)
+- [sklearn.cluster](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.cluster)
+
+## Failed Attempts
+
+Here is some documentation on some my previous failed attempts at solving this problem
+
+* use `np.diff` to simulate the derivative of the image, and look at each row to find potential edges. (inconsistent, resulted in doubled lines)
+* assume grids start from the start and end of the image, estimate pixel size to brute force a series of possible original grid resolutions, scale up image to source image size and calculate similarity index, return the result with largest simularity to source scaled image. (images would appear soft and nothing like source image)
+* given the edges from find_peaks on sobel, take the histogram of all edges, hand pick threshold of edges to consider the length of single pixel widths, use this calculation to extrapolate larger widths to produce a full grid (worked well, but required extensive model tuning)
+* use clustering algorithsm (K-means, mean shift) to group colours and only assign the median of colours found (slow, low k increases sharpness but a lot of colours are lost, high k decreases sharpness and preserves more colours)
