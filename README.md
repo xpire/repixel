@@ -43,6 +43,7 @@ I have completed the first 2 main goals. However, the colouring of the pixels ha
     - [x] use median of source pixels in grid cell
     - [ ] use clustering to group similar colours together for a more consistent view
     - [ ] use location based clustering when colouring pixels to ensure local colour consistency
+    - [ ] use grid lines with guassian weighting to highlight the centers of pixels, and calculate the mean from multiple pixels of the same color.
 
 # Useful Resources
 
